@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(109, 210, 250);
+    background-image: linear-gradient(rgb(109, 210, 250), rgb(98, 125, 245));
+}
+
+.clock{
+    height: 400px;
+    width: 400px;
+    margin: auto;
+}
+.clock-hand-container{
+    position: relative;
+    height: 280px;
+    width: 280px;
+    top: 60px;
+    left: 60px;
+}
+.hand{
+    position: relative;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    width: 50%;
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0, 3.29, 0.58, 1);
+}
+
+.hand.hour{
+    border-bottom: 5px solid rgb(235, 232, 232);
+}
+
+.hand.min{
+    border-bottom: 3px solid rgb(235, 232, 232);
+}
+
+.hand.sec{
+    border-bottom: 1px solid rgb(235, 232, 232);
+}
