@@ -1,25 +1,40 @@
 const secondHand = document.querySelector('.hand.sec');
 const minsHand = document.querySelector('.hand.min');
 const hourHand = document.querySelector('.hand.hour');
+var addHours = 0;
+var addMins = 0;
 
-function currentTime() {
+function tiking(){
     const now = new Date();
     const seconds = now.getSeconds();
     const secondsDegrees = ((seconds / 60) * 360) + 90;
     secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
-    const mins = now.getMinutes();
+    const mins = now.getMinutes() + addMins;
     const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
     minsHand.style.transform = `rotate(${minsDegrees}deg)`;
 
-    const hour = now.getHours();
+    const hour = now.getHours() + addHours;
     const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 }
 
-setInterval(currentTime, 1000);
+function currentTime(country) {
+    const countries = {
+        'india': {"mins":0,"hours":0},
+        'japan': {"mins":33,"hours":3},
+        'australia': {"mins":33,"hours":4},
+        'usa': {"mins":-30,"hours":-9},
+    };
+    addHours = countries[country].hours;
+    addMins = countries[country].mins;
+    document.getElementById('countryName').innerHTML  = country;
+    tiking();
+}
 
-currentTime();
+setInterval(tiking, 1000);
+
+currentTime('india');
 
 function addActive(clock){
     const selectedClock = document.querySelector("#"+clock);

@@ -53,6 +53,7 @@ body{
     height: 135px;
     width: 135px;
     margin: 5px;
+    cursor: pointer;
 }
 .clock-theme-item:hover{
 	box-shadow: 0 0 1rem #04407d;
@@ -74,4 +75,20 @@ body{
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 7px;
+}
+
+.countries{
+    width: 100%;
+    height: 56px;
+    font-size: 30px;
+    margin: 0 5px 10px 5px;
+    overflow-x: auto;
+    background-color: #ffffff4d;
+}
+.country{
+    display: inline-block;
+    height: 45px;
+    width: 75px;
+    margin: 5px;
+    cursor: pointer;
 }
