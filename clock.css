@@ -36,3 +36,33 @@ body{
 .hand.sec{
     border-bottom: 1px solid rgb(235, 232, 232);
 }
+
+.clock-theme-container{
+	height: 150px;
+    width: calc(100% - 25px);
+    display: block;
+    margin: 0 5px 10px 5px;
+    overflow-x: auto;
+    background-color: #ffffff4d;
+    position: absolute;
+    bottom: 0;
+}
+
+.clock-theme-item{
+	display: inline-block;
+    height: 135px;
+    width: 135px;
+    margin: 5px;
+}
+.clock-theme-item:hover{
+	box-shadow: 0 0 1rem #04407d;
+}
+
+.theme-clock{
+	height: 100%;
+	width: 100%;
+}
+
+.active-theme{
+	box-shadow: 0 0 1rem #ffc600;
+}

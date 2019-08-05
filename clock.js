@@ -1,5 +1,3 @@
-document.querySelector('.clock').style.backgroundImage = "url('./clocks/clock1.png')";
-
 const secondHand = document.querySelector('.hand.sec');
 const minsHand = document.querySelector('.hand.min');
 const hourHand = document.querySelector('.hand.hour');
@@ -22,3 +20,9 @@ function currentTime() {
 setInterval(currentTime, 1000);
 
 currentTime();
+
+function changeClock(clockName){
+    document.querySelector('.clock').style.backgroundImage = "url('./clocks/"+clockName+"')";
+}
+
+changeClock('clock1.png');
