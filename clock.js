@@ -21,8 +21,40 @@ setInterval(currentTime, 1000);
 
 currentTime();
 
-function changeClock(clockName){
-    document.querySelector('.clock').style.backgroundImage = "url('./clocks/"+clockName+"')";
+function addActive(clock){
+    const selectedClock = document.querySelector("#"+clock);
+    selectedClock.classList.add('active-theme');
 }
 
-changeClock('clock1.png');
+function removeActive(){
+    const selectedClock = document.querySelector(".active-theme");
+    if(selectedClock != null){
+        selectedClock.classList.remove('active-theme');
+    }
+}
+
+function changeClock(clockName){
+    removeActive();
+    const clocks = {
+        'clock1':{
+            'imageUrl': "./clocks/clock1.png",
+            'handColor': "#ebe8e8"
+        },
+        'clock2':{
+            'imageUrl': "./clocks/clock2.png",
+            'handColor': "#222122"
+        },
+        'clock3':{
+            'imageUrl': "./clocks/clock3.png",
+            'handColor': "#ea70b8"
+        },
+    };
+    document.querySelector('.clock').style.backgroundImage = "url('"+clocks[clockName].imageUrl+"')";
+    document.querySelector('.hand.hour').style.borderColor = clocks[clockName].handColor;
+    document.querySelector('.hand.min').style.borderColor = clocks[clockName].handColor;
+    document.querySelector('.hand.sec').style.borderColor = clocks[clockName].handColor;
+    document.querySelector('.place').style.color = clocks[clockName].handColor;
+    addActive(clockName);
+}
+
+changeClock('clock1');
